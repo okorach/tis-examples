@@ -1,25 +1,10 @@
 #include <stdlib.h>
 
+#include "absolute.h"
+
 #define MAXBUF 33
 
 #define NB_LTR ('z' - 'a' + 1)
-
-void check_magic_number(void)
-{
-    short tmp = (short)(0x1234 << 8);
-    char c = ((char *)&tmp)[0];
-    int i = 0 << (int)c;
-}
-
-int absolute_int(int x)
-{
-    int abs_x;
-    if (x < 0)
-        abs_x = -x;
-    else
-        abs_x = x;
-    return abs_x;
-}
 
 char *caesar_encrypt(char *str, int shift)
 {
@@ -65,6 +50,5 @@ char *caesar_decrypt(char *str, int shift)
         }
         buf[i] = '\0';
     }
-
     return buf;
 }
