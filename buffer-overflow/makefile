@@ -4,17 +4,15 @@ FONT_CYAN := `tput setaf 6`
 FONT_RED := `tput setaf 1`
 FONT_RESET := `tput sgr0`
 
-CC=gcc
+CC = gcc
 CFLAGS=-I. -I../integer-underflow -fprofile-arcs -ftest-coverage
-DEPS = $(wildcard *.h) Makefile
-SRC = $(wildcard *.c) ../integer-underflow/absolute.c
-OBJ = $(SRC:.c=.o)
-TARGET = caesar
 
-%.o: %.c $(DEPS)
-	@echo "Compiling $(FONT_BOLD)$<$(FONT_RESET)"
-	@echo "$(FONT_CYAN)$(CC) -c $< $(CFLAGS)$(FONT_RESET)"
-	@$(CC) -c $< $(CFLAGS)
+DEPS = $(wildcard *.h) makefile
+SRC = $(wildcard *.c) 
+OBJ = $(SRC:.c=.o)
+UNDER_TEST_SRC = $(filter-out $(wildcard */test_*.c) $(wildcard */main.c) main.c,$(SRC))
+GCOV_FILES = $(UNDER_TEST_SRC:.c=.c.gcov)
+TARGET = absolute
 
 .PHONY: build run cov tis clean all db
 
@@ -56,3 +54,17 @@ clean:
 # 	@echo "$(FONT_CYAN)bear make test$(FONT_RESET)"
 # 	@bear make test
 # 	@rm -rf a.out a.out.dSYM *.gcov *.gcda *.gcno *.o compile_commands.json
+
+#---------------------------- Standard directives -----------------------------
+
+clean:
+	rm -rf $(TARGET) *.gcov *.gcda *.gcno *.o compile_commands.json
+
+%.o: %.c $(DEPS)
+	@echo "Compiling $(FONT_BOLD)$<$(FONT_RESET)"
+	@echo "$(FONT_CYAN)$(CC) -c $< $(CFLAGS)$(FONT_RESET)"
+	@$(CC) -c $< $(CFLAGS)
+
+%.c.gcov: %.c
+	@echo "$(FONT_CYAN)gcov $<$(FONT_RESET)"
+	@gcov $<
