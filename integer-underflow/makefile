@@ -9,7 +9,7 @@ CFLAGS=-I. -fprofile-arcs -ftest-coverage
 DEPS = $(wildcard *.h) Makefile
 SRC = $(wildcard *.c) 
 OBJ = $(SRC:.c=.o)
-TARGET = test
+TARGET = absolute
 
 %.o: %.c $(DEPS)
 	@echo "Compiling $(FONT_BOLD)$<$(FONT_RESET)"
@@ -21,8 +21,8 @@ TARGET = test
 cov: run
 	@echo ""
 	@echo "Running $(FONT_BOLD)gcov$(FONT_RESET) to produce file text coverage"
-	@echo "$(FONT_CYAN)gcov absolute.c$(FONT_RESET)"
-	@gcov absolute.c
+	@echo "$(FONT_CYAN)gcov $(TARGET).c$(FONT_RESET)"
+	@gcov $(TARGET).c
 
 run: $(TARGET)
 	@echo ""
