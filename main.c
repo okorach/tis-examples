@@ -2,12 +2,24 @@
 #include <stdio.h>
 
 #include "test_absolute.h"
+#include "test_caesar.h"
 
 int main(void)
 {
+
+    printf("Testing absolute_int()\n");
     test_absolute_int(10);
     test_absolute_int(0);
     test_absolute_int(-1);
     test_absolute_int(-65536);
+
+    printf("Testing caesar_encrypt/decrypt()\n");
+    char orig_str[] = "People of Earth, your attention please";
+
+    printf("Test 1: Shift with a negative input\n");
+    test_caesar(orig_str, -3);
+    printf("\nTest 2: Shift with a positive input\n");
+    test_caesar(orig_str, 7);
+
     return 0;
 }
