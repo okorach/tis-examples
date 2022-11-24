@@ -1,0 +1,26 @@
+[
+    {
+        "include": "tis-common.json",
+        "name": "all",
+        "val-profile": "interpreter",
+        "main": "main"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "increment short",
+        "val-profile": "interpreter",
+        "main": "test_increment_shorts"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "increment int",
+        "val-profile": "interpreter",
+        "main": "test_increment_ints"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "increment array",
+        "val-profile": "interpreter",
+        "main": "test_increment_array"
+    }
+]
