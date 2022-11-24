@@ -1,0 +1,8 @@
+[
+    {
+        "include": "tis-common.json",
+        "name": "test_l1",
+        "val-profile": "interpreter",
+        "main": "main"
+    }
+]
