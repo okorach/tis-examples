@@ -1,0 +1,8 @@
+[
+    {
+        "include": "tis-common.json",
+        "name": "increment array",
+        "val-profile": "interpreter",
+        "main": "test_increment_array"
+    }
+]
