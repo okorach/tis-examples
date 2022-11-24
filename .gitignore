@@ -6,3 +6,5 @@
 **/*.gcov
 **/*.o
 test
+**/tis_report.html
+**/_results/
