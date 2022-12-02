@@ -5,7 +5,7 @@
 This directory demonstrates the difference of purpose and results of Unit Tests vs
 the TrustInSoft Analysis Level 1 then Level 2 analysis
 
-- **Unit Tests are mostly functional**, they verify that the output of a function is the
+- **Unit Tests are mostly behavioral**, they verify that the output of a function is the
 expected one for some given input (and context).
 - **TrustInSoft Level 1 or Level 2 analyses are mostly about robustness**. They verify that
 on the path of execution of the test (L1: for discrete inputs, L2: for generalized inputs), there are no *Undefined Behaviors* (*UB*), i.e. something that may cause s*UB*tle **bugs or vulnerabilities** in some particular conditions
