@@ -15,6 +15,8 @@ int mcdc1(int a, int b, int c)
     return 2;
 }
 
+/* Keep for later
+
 int mcdc2(int a, int b, int c)
 {
 
@@ -34,3 +36,4 @@ int mcdc2(int a, int b, int c)
     }
     return 2;
 }
+*/
