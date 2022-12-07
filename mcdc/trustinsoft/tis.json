@@ -1,8 +1,32 @@
 [
     {
         "include": "tis-common.json",
-        "name": "test_l1",
+        "name": "mcdc-all",
         "val-profile": "interpreter",
         "main": "main"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "mcdc-base",
+        "val-profile": "interpreter",
+        "main": "test_mcdc_base"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "mcdc-addon-1",
+        "val-profile": "interpreter",
+        "main": "test_mcdc_complement_1"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "mcdc-addon-2",
+        "val-profile": "interpreter",
+        "main": "test_mcdc_complement_2"
+    },
+    {
+        "include": "tis-common.json",
+        "name": "mcdc-addon-3",
+        "val-profile": "interpreter",
+        "main": "test_mcdc_complement_3"
     }
 ]
